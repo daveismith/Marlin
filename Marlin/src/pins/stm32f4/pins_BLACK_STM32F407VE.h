@@ -162,3 +162,14 @@
     #define SD_MOSI_PIN             SDIO_CMD_PIN
   #endif
 #endif
+
+
+//
+// RS485 support
+//
+#define RS485_ENABLED
+#define RS485_RX_PIN                PD13
+#define RS485_RX_ENABLE_PIN         PD12
+#define RS485_TX_PIN                PD10
+#define RS485_TX_ENABLE_PIN         PD11
+#define RS485_VERIFY_READ_BACK
