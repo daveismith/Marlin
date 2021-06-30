@@ -236,6 +236,10 @@
   #include "feature/stepper_driver_safety.h"
 #endif
 
+#if ENABLED(RS485_ENABLE)
+  #include "feature/rs485bus.h"
+#endif 
+
 PGMSTR(M112_KILL_STR, "M112 Shutdown");
 
 MarlinState marlin_state = MF_INITIALIZING;
@@ -1207,6 +1211,10 @@ void setup() {
       SETUP_RUN(SPI.begin());
     #endif
     SETUP_RUN(tmc_init_cs_pins());
+  #endif
+
+  #if ENABLED(RS485_ENABLE)
+    rs485Bus.init();
   #endif
 
   #ifdef BOARD_INIT
